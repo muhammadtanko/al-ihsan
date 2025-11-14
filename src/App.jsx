@@ -6,10 +6,10 @@ import AboutPage from './pages/about'
 import ServicesPage from './pages/services';
 import ContactPage from './pages/contact';
 import MediaPage from './pages/media';
+import PaymentPage from './pages/payment';
 import MediaDetailPage from './pages/mediaDetailPage';
 import AlIhsanBoardPage from './pages/boardPage';
 import GetStartedPage from './pages/getStartedPage';
-import PaymentPage from './pages/PaymentPage';
 // changes
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
           <Route path="/media/:id" element={<MediaDetailPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/get-started" element={<GetStartedPage />} />
-          <Route path="/payment" element={<PaymentPage />} />
+          <Route path="/payment" element={< PaymentPage />} />
 
         </Routes>
       </Router>

@@ -123,7 +123,7 @@ const AlIhsanBoardPage = () => {
      
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#2E324D] to-[#3a3f5f] text-white py-16 md:py-20">
+      <section className="bg-linear-to-br from-[#2E324D] to-[#3a3f5f] text-white py-16 md:py-20">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -163,7 +163,7 @@ const AlIhsanBoardPage = () => {
                     alt={member.name}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 right-4">
                     <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
                     <p className="text-[#A8D235] font-semibold">{member.position}</p>
@@ -213,7 +213,7 @@ const AlIhsanBoardPage = () => {
                   alt={selectedMember.name}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6 text-white">
                   <h2 className="text-3xl md:text-4xl font-bold mb-2">{selectedMember.name}</h2>
                   <p className="text-xl text-[#A8D235] font-semibold">{selectedMember.position}</p>
@@ -267,7 +267,7 @@ const AlIhsanBoardPage = () => {
                   <ul className="space-y-2">
                     {selectedMember.achievements.map((achievement, index) => (
                       <li key={index} className="flex items-start gap-3">
-                        <span className="w-2 h-2 bg-[#A8D235] rounded-full mt-2 flex-shrink-0"></span>
+                        <span className="w-2 h-2 bg-[#A8D235] rounded-full mt-2 shrink-0"></span>
                         <span className="text-gray-700">{achievement}</span>
                       </li>
                     ))}
