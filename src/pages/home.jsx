@@ -95,7 +95,9 @@ const HomePage = () => {
                 className="flex flex-col sm:flex-row gap-4"
                 variants={fadeInUp}
               >
-                <button className="bg-[#A8D235] text-[#2E324D] px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:bg-[#92bb2d] transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-2">
+                <button
+                  onClick={() => navigate("/get-started")}
+                  className="bg-[#A8D235] text-[#2E324D] px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:bg-[#92bb2d] transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-2">
                   Enroll Now <ArrowRight size={20} />
                 </button>
                 <button className="bg-transparent border-2 border-white text-white px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:bg-white hover:text-[#2E324D] transition-all transform hover:scale-105">
