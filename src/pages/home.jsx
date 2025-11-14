@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Shield, Users, Clock, Award, Phone, Mail, MapPin, ArrowRight, CheckCircle } from 'lucide-react';
+import Footer from '../components/footer';
+import FAQSection from '../components/faq';
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -54,40 +58,15 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="bg-[#2E324D] text-white sticky top-0 z-50 shadow-lg">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex justify-between items-center">
-            <motion.div 
-              className="text-xl md:text-2xl font-bold"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <span className="text-[#A8D235]">Al-Ihsan</span> Health Services
-            </motion.div>
-            <motion.div 
-              className="hidden md:flex space-x-6"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <a href="#home" className="hover:text-[#A8D235] transition-colors">Home</a>
-              <a href="#about" className="hover:text-[#A8D235] transition-colors">About Us</a>
-              <a href="#services" className="hover:text-[#A8D235] transition-colors">Services</a>
-              <a href="#contact" className="hover:text-[#A8D235] transition-colors">Contact</a>
-            </motion.div>
-          </div>
-        </div>
-      </nav>
+
 
       {/* Hero Section */}
-      <section id="home" className="relative bg-gradient-to-br from-[#2E324D] to-[#3a3f5f] text-white py-16 md:py-24 overflow-hidden">
+      <section id="home" className="relative bg-linear-to-br from-[#2E324D] to-[#3a3f5f] text-white py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-64 h-64 bg-[#A8D235] rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#EC3338] rounded-full blur-3xl"></div>
         </div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -95,7 +74,7 @@ const HomePage = () => {
               animate={isVisible ? "visible" : "hidden"}
               variants={staggerContainer}
             >
-              <motion.h1 
+              <motion.h1
                 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight"
                 variants={fadeInUp}
               >
@@ -104,15 +83,15 @@ const HomePage = () => {
                 <span className="text-[#A8D235]">Affordable</span>, and{' '}
                 <span className="text-[#A8D235]">Reliable</span>
               </motion.h1>
-              
-              <motion.p 
+
+              <motion.p
                 className="text-base md:text-lg lg:text-xl mb-8 text-gray-200 leading-relaxed"
                 variants={fadeInUp}
               >
                 Al-Ihsan Integrated Health Services Limited provides comprehensive health insurance solutions designed to protect individuals, families, organizations, and communities through trusted healthcare networks and efficient service delivery.
               </motion.p>
-              
-              <motion.div 
+
+              <motion.div
                 className="flex flex-col sm:flex-row gap-4"
                 variants={fadeInUp}
               >
@@ -127,7 +106,7 @@ const HomePage = () => {
                 </button>
               </motion.div>
             </motion.div>
-            
+
             <motion.div
               className="hidden lg:flex justify-center items-center"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -176,7 +155,7 @@ const HomePage = () => {
               Who We Are
             </h2>
             <div className="w-24 h-1 bg-[#A8D235] mx-auto mb-8"></div>
-            
+
             <div className="bg-white p-6 md:p-10 rounded-2xl shadow-xl border-l-4 border-[#A8D235]">
               <p className="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed mb-6">
                 <span className="font-bold text-[#2E324D]">Al-Ihsan Integrated Health Services Limited</span> is a licensed Third-Party Administrator (TPA) and managed care provider dedicated to improving access to affordable healthcare.
@@ -184,7 +163,7 @@ const HomePage = () => {
               <p className="text-base md:text-lg text-gray-700 leading-relaxed">
                 We work collaboratively with public institutions, private organizations, healthcare providers, and communities to guarantee quality healthcare services that are both accessible and cost-effective.
               </p>
-              
+
               <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="text-center p-4 bg-[#2E324D] text-white rounded-lg">
                   <p className="text-3xl md:text-4xl font-bold text-[#A8D235] mb-2">60+</p>
@@ -229,7 +208,7 @@ const HomePage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-50 to-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#A8D235] group"
+                  className="bg-linear-to-br from-gray-50 to-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#A8D235] group"
                 >
                   <div className="w-14 h-14 md:w-16 md:h-16 bg-[#2E324D] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#A8D235] transition-colors duration-300">
                     <Icon className="w-7 h-7 md:w-8 md:h-8 text-[#A8D235] group-hover:text-[#2E324D]" />
@@ -248,12 +227,12 @@ const HomePage = () => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-[#2E324D] to-[#3a3f5f] text-white relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-linear-to-r from-[#2E324D] to-[#3a3f5f] text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-[#A8D235] rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#EC3338] rounded-full blur-3xl"></div>
         </div>
-        
+
         <div className="container mx-auto px-4 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -268,9 +247,13 @@ const HomePage = () => {
               Take the first step towards securing quality healthcare for you and your loved ones
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-[#A8D235] text-[#2E324D] px-8 md:px-10 py-3 md:py-4 rounded-lg font-bold text-base md:text-lg hover:bg-[#92bb2d] transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-2 mx-auto sm:mx-0">
+              <button
+                onClick={() => navigate("/get-started")}
+                className="bg-[#A8D235] text-[#2E324D] px-8 py-4 rounded-lg font-bold hover:bg-[#92bb2d] transition-all flex items-center justify-center gap-2"
+              >
                 Get Started Today <ArrowRight size={20} />
               </button>
+
               <button className="bg-transparent border-2 border-white text-white px-8 md:px-10 py-3 md:py-4 rounded-lg font-bold text-base md:text-lg hover:bg-white hover:text-[#2E324D] transition-all transform hover:scale-105 mx-auto sm:mx-0">
                 Download Brochure
               </button>
@@ -278,63 +261,10 @@ const HomePage = () => {
           </motion.div>
         </div>
       </section>
-
+      {/* FAQ */}
+      <FAQSection />
       {/* Footer */}
-      <footer id="contact" className="bg-[#2E324D] text-white py-12 md:py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h3 className="text-xl md:text-2xl font-bold mb-4 text-[#A8D235]">Al-Ihsan Health Services</h3>
-              <p className="text-sm md:text-base text-gray-300">
-                Your trusted partner for accessible, affordable, and reliable healthcare solutions across Nigeria.
-              </p>
-            </div>
-            
-            <div>
-              <h4 className="text-lg font-bold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-sm md:text-base">
-                <li><a href="#about" className="hover:text-[#A8D235] transition-colors">About Us</a></li>
-                <li><a href="#services" className="hover:text-[#A8D235] transition-colors">Our Services</a></li>
-                <li><a href="#" className="hover:text-[#A8D235] transition-colors">Health Plans</a></li>
-                <li><a href="#" className="hover:text-[#A8D235] transition-colors">Network Providers</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="text-lg font-bold mb-4">Resources</h4>
-              <ul className="space-y-2 text-sm md:text-base">
-                <li><a href="#" className="hover:text-[#A8D235] transition-colors">Enrollment Guide</a></li>
-                <li><a href="#" className="hover:text-[#A8D235] transition-colors">Claims Process</a></li>
-                <li><a href="#" className="hover:text-[#A8D235] transition-colors">FAQs</a></li>
-                <li><a href="#" className="hover:text-[#A8D235] transition-colors">Contact Support</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="text-lg font-bold mb-4">Contact Us</h4>
-              <ul className="space-y-3 text-sm md:text-base">
-                <li className="flex items-start gap-2">
-                  <Phone size={18} className="text-[#A8D235] mt-1 flex-shrink-0" />
-                  <span>24/7 Call Center Available</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Mail size={18} className="text-[#A8D235] mt-1 flex-shrink-0" />
-                  <span>info@alihsan-health.com</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <MapPin size={18} className="text-[#A8D235] mt-1 flex-shrink-0" />
-                  <span>Kaduna State, Nigeria</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-700 pt-8 text-center text-sm md:text-base">
-            <p>&copy; 2024 Al-Ihsan Integrated Health Services Limited. All rights reserved.</p>
-            <p className="mt-2 text-gray-400">Licensed by Kaduna State Contributory Health Management Authority</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
