@@ -10,6 +10,7 @@ import MediaDetailPage from './pages/mediaDetailPage';
 import AlIhsanBoardPage from './pages/boardPage';
 import GetStartedPage from './pages/getStartedPage';
 import PaymentPage from './pages/PaymentPage';
+// changes
 
 function App() {
 
